@@ -61,16 +61,16 @@
       <h3>Contact me</h3>
       <form id="contact-form" class="contact-form">
         <div class="input">
-          <input type="text" name="user" class="input-field" required/>
+          <input type="text" name="user" class="input-field" required maxlength="20" placeholder=" "/>
           <label class="input-label">Name</label>
         </div>
         <div class="input">
-          <input type="text" name="email" class="input-field" required/>
+          <input type="email" name="email" class="input-field" required placeholder=" "/>
           <label class="input-label">Email</label>
         </div>
         <div class="input">
           <span class="letterCount">Letter Count <span id="message-letter-counter">0</span>/800</span>
-          <textarea type="text" id="message-area" name="message" class="input-field" rows="5" cols="33" required maxlength="800"></textarea>
+          <textarea type="text" id="message-area" name="message" class="input-field" rows="5" cols="33" required maxlength="800" placeholder=" "></textarea>
           <label class="input-label">Message</label>
         </div>
         <button class="action-button" type="submit">Submit</button>
@@ -80,7 +80,7 @@
 
   <script>
     const formElement = document.getElementById('contact-form')
-    formElement.addEventListener('submit', (e) => {
+    formElement.addEventListener('submit', e => {
       e.preventDefault();
       const formData = new FormData(formElement);
       const plainFormData = Object.fromEntries(formData.entries());

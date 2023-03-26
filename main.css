@@ -3,6 +3,7 @@
   --blue-green: #2FBFBC;
   --lime-green: #B8D734;
   --light-green: #FBFFEC;
+  --light-grey: #eeeeee;
   --white: #ffffff;
   --orange: #F76C1E;
   --terracotta: #B44405;
@@ -221,7 +222,7 @@ p {
 	border: 0;
 	z-index: 1;
 	background-color: transparent;
-	border-bottom: 2px solid #eee; 
+	border-bottom: 2px solid var(--light-grey); 
 	font: inherit;
 	font-size: 1.125rem;
 	padding: .25rem 0;
@@ -232,7 +233,7 @@ p {
   border-bottom-color: var(--dark-green)
 }
 
-.input-field:focus+.input-label, .input-field:valid+.input-label {
+.input-field:focus+.input-label, .input-field:valid+.input-label, .input-field:not(:placeholder-shown)+.input-label{
   color: var(--dark-green);
   transform: translateY(-1.5rem);
   font-size: 11px;
@@ -253,7 +254,7 @@ p {
 	font-weight: 500;
 	background-color: var(--orange);
 	border-radius: 6px;
-	color: #FFF;
+	color: var(--white);
 	border: 0;
 }
 
