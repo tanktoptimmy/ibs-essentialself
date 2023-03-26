@@ -1,5 +1,119 @@
-.centered {
-  margin: auto;
+:root {
+  --dark-green: #065755;
+  --blue-green: #2FBFBC;
+  --lime-green: #B8D734;
+  --white: #ffffff;
+
+  --mx1: 8px;
+  --mx2: 16px;
+  --mx3: 24px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+p {
+  line-height: 2em;
+}
+
+.logo {
+  margin-inline: auto;
+  margin-block: 20px;
   text-align: center;
   display: block
+}
+
+.topText {
+  font-size: 24px;
+  line-height: 1.25em;
+  padding: var(--mx2) var(--mx3);
+  color: var(--dark-green);
+  max-width: 900px;
+  margin: var(--mx3) auto;
+}
+.centered {
+  margin-inline: auto;
+}
+
+.grid {
+  display: grid;
+}
+
+.maingrid {
+  gap: var(--mx3);
+  max-width: 900px;
+  margin: auto;
+  grid-template-areas: 
+    "text1"
+    "aside1"
+    "text2"
+    "aside2"
+    "text3"
+    "aside3";
+}
+
+.text1 {
+  grid-area: text1;
+}
+
+.text2 {
+  grid-area: text2;
+}
+
+.text3 {
+  grid-area: text3;
+}
+
+.aside1 {
+  grid-area: aside1;
+}
+
+.aside2 {
+  grid-area: aside2;
+}
+
+.aside3 {
+  grid-area: aside3;
+}
+
+.aside {
+  height: 120px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  color: var(--white);
+  word-spacing: 9999999px;
+  line-height: 1em;
+  display: flex;
+  align-items: end;
+  position: relative;
+}
+
+.bluegreen {
+  background: var(--blue-green);
+}
+.limegreen {
+  background: var(--lime-green);
+}
+
+.darkgreen {
+  background-color: var(--dark-green);
+}
+
+.bufferfly {
+  position: absolute;
+  right: -30px;
+  transform: rotate(-30deg);
+}
+
+@media (min-width: 750px) {
+  .maingrid {
+    grid-template-areas:
+    "aside1 text1"
+    "text2 aside2"
+    "aside3 text3"
+  }
+  .aside {
+    height: 250px;
+    font-size: 40px;
+  }
 }
