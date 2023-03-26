@@ -2,11 +2,15 @@
   --dark-green: #065755;
   --blue-green: #2FBFBC;
   --lime-green: #B8D734;
+  --light-green: #FBFFEC;
   --white: #ffffff;
 
   --mx1: 8px;
   --mx2: 16px;
   --mx3: 24px;
+  --mx4: 32px;
+
+  --max-width: 900px
 }
 
 body {
@@ -14,6 +18,7 @@ body {
 }
 p {
   line-height: 2em;
+  margin-inline: var(--mx1);
 }
 
 .logo {
@@ -28,7 +33,7 @@ p {
   line-height: 1.25em;
   padding: var(--mx2) var(--mx3);
   color: var(--dark-green);
-  max-width: 900px;
+  max-width: 60ch;
   margin: var(--mx3) auto;
 }
 .centered {
@@ -41,7 +46,7 @@ p {
 
 .maingrid {
   gap: var(--mx3);
-  max-width: 900px;
+  max-width: var(--max-width);
   margin: auto;
   grid-template-areas: 
     "text1"
@@ -105,6 +110,34 @@ p {
   transform: rotate(-30deg);
 }
 
+.pricesHolder {
+  background-color: var(--light-green)
+}
+.prices {
+  max-width: var(--max-width);
+  padding-bottom: var(--mx4);
+  margin: 0 auto var(--mx3);
+  padding-inline: var(--mx2);
+}
+
+.pricesTitle {
+  padding-top: var(--mx3);
+  color: var(--dark-green)
+}
+
+.cardsHolder {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mx2)
+}
+
+.card {
+  color: var(--dark-green);
+  background: var(--white);
+  filter: drop-shadow(0px 5px 5px #C2D37F);
+  padding: var(--mx2);
+}
+
 @media (min-width: 750px) {
   .maingrid {
     grid-template-areas:
@@ -115,5 +148,11 @@ p {
   .aside {
     height: 250px;
     font-size: 40px;
+  }
+  .cardsHolder {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .prices {
+    padding: 0;
   }
 }
