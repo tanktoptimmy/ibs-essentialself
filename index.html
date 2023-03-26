@@ -85,7 +85,7 @@
       const formData = new FormData(formElement);
       const plainFormData = Object.fromEntries(formData.entries());
 	    const formDataJsonString = JSON.stringify(plainFormData);
-      fetch("https://vercel.com/timparry/priceboost-api/api/contact",{
+      fetch("https://priceboost-api.vercel.app/api/contact",{
         method: "POST",
         body: formDataJsonString,
         headers: new Headers({
