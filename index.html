@@ -73,33 +73,41 @@
           <textarea type="text" id="message-area" name="message" class="input-field" rows="5" cols="33" required maxlength="800" placeholder=" "></textarea>
           <label class="input-label">Message</label>
         </div>
-        <button class="action-button" type="submit">Submit</button>
+        <button class="action-button" id="submit-button" type="submit">
+          <span class="submit">Submit</span>
+          <span class="sending">Sending ...</span>
+        </button>
       </form>
     </div>
   </section>
 
   <script>
     const formElement = document.getElementById('contact-form');
+    const submitButtonElement = document.getElementById('submit-button');
     formElement.addEventListener('submit', e => {
       e.preventDefault();
+      submitButtonElement.classList.add('waiting')
       const formData = new FormData(formElement);
       const plainFormData = Object.fromEntries(formData.entries());
 	    const formDataJsonString = JSON.stringify(plainFormData);
-        fetch("https://priceboost-api.vercel.app/api/contact",{
-          method: "POST",
-          body: formDataJsonString,
-          headers: new Headers({
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-          })
+      fetch("https://priceboost-api.vercel.app/api/contact",{
+        method: "POST",
+        body: formDataJsonString,
+        headers: new Headers({
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
         })
-        .then(() => {
-            formElement.reset();
-            alert("Contact sent successfully")
-          })
-        .catch(err=> {
-            alert("Sorry, we've had a problem, please try again")
+      })
+      .then(() => {
+          formElement.reset();
+          alert("Contact sent successfully")
         })
+      .catch(err=> {
+          alert("Sorry, we've had a problem, please try again")
+      })
+      .finally(()=>{
+        submitButtonElement.classList.remove('waiting')
+      })
 
     })
 

@@ -261,3 +261,15 @@ p {
 .action-button:focus, .action-button:active {
   background-color: var(--terracotta)
 }
+
+.action-button .sending{
+  display: none;
+}
+
+.action-button.waiting .sending{
+  display: inline-block
+}
+
+.action-button.waiting .submit{
+  display: none;
+}
