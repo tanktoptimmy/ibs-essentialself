@@ -111,9 +111,12 @@ p {
 }
 
 .pricesHolder {
-  background-color: var(--light-green)
+  background-color: var(--light-green);
+  padding-top: var(--mx1);
 }
+
 .prices {
+  position: relative;
   max-width: var(--max-width);
   padding-bottom: var(--mx4);
   margin: 0 auto var(--mx3);
@@ -136,6 +139,12 @@ p {
   background: var(--white);
   filter: drop-shadow(0px 5px 5px #C2D37F);
   padding: var(--mx2);
+}
+
+.pricesButterfly {
+  position: absolute;
+  top: -50px;
+  left: -20px;
 }
 
 @media (min-width: 750px) {
