@@ -9,6 +9,8 @@
   --mx2: 16px;
   --mx3: 24px;
   --mx4: 32px;
+  --mx5: 40px;
+  --mx6: 48px;
 
   --max-width: 900px
 }
@@ -31,10 +33,10 @@ p {
 .topText {
   font-size: 24px;
   line-height: 1.25em;
-  padding: var(--mx2) var(--mx3);
+  padding: var(--mx2);
   color: var(--dark-green);
   max-width: 60ch;
-  margin: var(--mx3) auto;
+  margin: var(--mx4) auto var(--mx1) auto;
 }
 .centered {
   margin-inline: auto;
@@ -113,6 +115,7 @@ p {
 .pricesHolder {
   background-color: var(--light-green);
   padding-top: var(--mx1);
+  margin-top: var(--mx6);
 }
 
 .prices {
@@ -124,7 +127,7 @@ p {
 }
 
 .pricesTitle {
-  padding-top: var(--mx3);
+  padding-top: var(--mx4);
   color: var(--dark-green)
 }
 
@@ -139,6 +142,10 @@ p {
   background: var(--white);
   filter: drop-shadow(0px 5px 5px #C2D37F);
   padding: var(--mx2);
+}
+
+.card h3 {
+  padding-inline: var(--mx1) 
 }
 
 .pricesButterfly {
