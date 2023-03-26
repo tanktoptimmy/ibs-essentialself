@@ -98,9 +98,13 @@
           Accept: 'application/json',
         })
       })
-      .then(() => {
+      .then((e) => {
+          if(response.status.toString() === "200"){
+            alert("Message sent successfully")
+          } else{
+            alert("Sorry, we've had a problem, please try again")
+          }
           formElement.reset();
-          alert("Message sent successfully")
         })
       .catch(err=> {
           alert("Sorry, we've had a problem, please try again")
