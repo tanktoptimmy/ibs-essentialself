@@ -79,25 +79,33 @@
   </section>
 
   <script>
-    const formElement = document.getElementById('contact-form')
+    const formElement = document.getElementById('contact-form');
     formElement.addEventListener('submit', e => {
       e.preventDefault();
       const formData = new FormData(formElement);
       const plainFormData = Object.fromEntries(formData.entries());
 	    const formDataJsonString = JSON.stringify(plainFormData);
-      fetch("https://priceboost-api.vercel.app/api/contact",{
-        method: "POST",
-        body: formDataJsonString,
-        headers: new Headers({
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        }),
-      })
+        fetch("https://priceboost-api.vercel.app/api/contact",{
+          method: "POST",
+          body: formDataJsonString,
+          headers: new Headers({
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          })
+        })
+        .then(() => {
+            formElement.reset();
+            alert("Contact sent successfully")
+          })
+        .catch(err=> {
+            alert("Sorry, we've had a problem, please try again")
+        })
+
     })
 
     const messageElement = document.getElementById('message-area');
     const countAreaElement = document.getElementById('message-letter-counter');
-    messageElement.addEventListener('input', (e)=> {
+    messageElement.addEventListener('input', e => {
       countAreaElement.textContent = e.currentTarget.value.length;
     })
   </script>
