@@ -56,5 +56,50 @@
       </div>
     </div>
   </section>
+  <section class="contactHolder">
+    <div class="contact">
+      <h3>Contact me</h3>
+      <form id="contact-form" class="contact-form">
+        <div class="input">
+          <input type="text" name="user" class="input-field" required/>
+          <label class="input-label">Name</label>
+        </div>
+        <div class="input">
+          <input type="text" name="email" class="input-field" required/>
+          <label class="input-label">Email</label>
+        </div>
+        <div class="input">
+          <span class="letterCount">Letter Count <span id="message-letter-counter">0</span>/800</span>
+          <textarea type="text" id="message-area" name="message" class="input-field" rows="5" cols="33" required maxlength="800"></textarea>
+          <label class="input-label">Message</label>
+        </div>
+        <button class="action-button" type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const formElement = document.getElementById('contact-form')
+    formElement.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(formElement);
+      const plainFormData = Object.fromEntries(formData.entries());
+	    const formDataJsonString = JSON.stringify(plainFormData);
+      fetch("https://vercel.com/timparry/priceboost-api/api/contact",{
+        method: "POST",
+        body: formDataJsonString,
+        headers: new Headers({
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        }),
+      })
+    })
+
+    const messageElement = document.getElementById('message-area');
+    const countAreaElement = document.getElementById('message-letter-counter');
+    messageElement.addEventListener('input', (e)=> {
+      countAreaElement.textContent = e.currentTarget.value.length;
+    })
+  </script>
 </body>
 </html>

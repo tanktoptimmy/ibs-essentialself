@@ -4,6 +4,8 @@
   --lime-green: #B8D734;
   --light-green: #FBFFEC;
   --white: #ffffff;
+  --orange: #F76C1E;
+  --terracotta: #B44405;
 
   --mx1: 8px;
   --mx2: 16px;
@@ -134,7 +136,8 @@ p {
 .cardsHolder {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--mx2)
+  gap: var(--mx2);
+  padding-bottom: var(--mx4);
 }
 
 .card {
@@ -154,6 +157,28 @@ p {
   left: -20px;
 }
 
+.contactHolder {
+ background-color: #f1f3fb;
+}
+
+.contact {
+  position: relative;
+  max-width: var(--max-width);
+  padding: var(--mx4);
+  margin: 0 auto var(--mx3);
+  padding-inline: var(--mx2);
+}
+
+.contact h3 {
+  color: var(--dark-green)
+}
+
+.contact-form {
+  background: var(--white);
+  border-radius: 8px;
+  padding: var(--mx4)
+}
+
 @media (min-width: 750px) {
   .maingrid {
     grid-template-areas:
@@ -171,4 +196,67 @@ p {
   .prices {
     padding: 0;
   }
+}
+
+/* ------------------------------- *\
+---------- FORM FIELDS -------------
+\* --------------------------------*/
+
+.input {
+  position: relative;
+  display: flex;
+	flex-direction: column-reverse;
+  padding-block: var(--mx2)
+}
+
+.input-label {
+	color: var(--dark-green);
+  font-size: 14px;
+	position: absolute;
+	top: 1.5rem;
+	transition: .25s ease;
+}
+
+.input-field {
+	border: 0;
+	z-index: 1;
+	background-color: transparent;
+	border-bottom: 2px solid #eee; 
+	font: inherit;
+	font-size: 1.125rem;
+	padding: .25rem 0;
+}
+
+.input-field:focus, .input-field:valid {
+  outline: 0;
+  border-bottom-color: var(--dark-green)
+}
+
+.input-field:focus+.input-label, .input-field:valid+.input-label {
+  color: var(--dark-green);
+  transform: translateY(-1.5rem);
+  font-size: 11px;
+}
+
+.letterCount {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  font-size: 11px;
+}
+
+.action-button {
+	font: inherit;
+	font-size: 1.25rem;
+	padding: 1em;
+	width: 100%;
+	font-weight: 500;
+	background-color: var(--orange);
+	border-radius: 6px;
+	color: #FFF;
+	border: 0;
+}
+
+.action-button:focus, .action-button:active {
+  background-color: var(--terracotta)
 }
