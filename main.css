@@ -109,9 +109,9 @@ p {
   background-color: var(--dark-green);
 }
 
-.bufferfly {
+.butterfly {
   position: absolute;
-  right: -30px;
+  right: 10px;
   transform: rotate(-30deg);
 }
 
@@ -160,6 +160,7 @@ p {
 
 .contactHolder {
  background-color: #f1f3fb;
+ border: 1px solid transparent;
 }
 
 .contact {
@@ -196,6 +197,9 @@ p {
   }
   .prices {
     padding: 0;
+  }
+  .butterfly{
+    right: -30px;
   }
 }
 
@@ -272,4 +276,22 @@ p {
 
 .action-button.waiting .submit{
   display: none;
+}
+
+li {
+  margin-bottom: var(--mx1)
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+ul strong{
+  font-size: 20px;
+  color: var(--blue-green);
+}
+
+footer {
+  background-color: var(--dark-green);
+  color: var(--white);
+  padding: var(--mx2);
 }
