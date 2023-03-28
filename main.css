@@ -25,6 +25,10 @@ p {
   line-height: 2em;
   margin-inline: var(--mx1);
 }
+.contactDetails > div {
+  color: var(--dark-green);
+  text-align: right;
+}
 
 .logo {
   margin-inline: auto;
@@ -294,4 +298,7 @@ footer {
   background-color: var(--dark-green);
   color: var(--white);
   padding: var(--mx2);
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
 }
